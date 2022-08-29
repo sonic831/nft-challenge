@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Home = ({ collections }: Props) => {
-  console.log(collections);
+  
   return (
     <div className="mx-auto flex min-h-screen max-w-7xl flex-col py-20 px-10 2xl:px-0">
       <Head>
@@ -58,7 +58,6 @@ export const getServerSideProps: GetServerSideProps = async({ params })=> {
   }`
 
   const collections = await sanityClient.fetch(query)
-  //console.log(collections)
   return {
     props: {
       collections,
